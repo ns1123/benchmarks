@@ -28,9 +28,9 @@ from sets import Set
 
 # ------------------------------ Parameters
 # Scale factor
-scaleFactor = 1
+scaleFactor = 100
 # Hive catalog schema to use (create the database using Spark first!)
-databaseName = "tpcds_sf%d" % (scaleFactor)
+databaseName = "sf%d_alluxio" % (scaleFactor)
 # Timeout of a query
 timeout = '15m'
 # Number of runs.
@@ -42,7 +42,7 @@ results_dir = "results/timestamp=%d" % (int(time.time()))
 # The following are just for convert_raw_results CSV output:
 vendor = "EMR"
 system = "Presto 0.170"
-cluster = "10x r3.xlarge (+r3.xlarge driver)"
+cluster = "4x r4.2xlarge (+r4.2xlarge driver)"
 configuration = "std"
 date = time.strftime("%Y-%m-%d")
 # ------------------------------
